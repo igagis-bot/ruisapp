@@ -105,7 +105,7 @@ void xdg_surface_wrapper::xdg_surface_configure(
 	// This makes the surface to be mapped to the screen.
 	// swap EGL frame buffers with the window's EGL context made current
 	win.gui.context.get().ren().ctx().apply([&]() {
-		natwin.swap_frame_buffers();
+		win.gui.context.get().ren().ctx().swap_frame_buffers();
 	});
 
 	// on some Wayland implementations just swapping EGL buffers is not enough and surface commit is needed
